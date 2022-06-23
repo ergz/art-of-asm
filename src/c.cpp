@@ -17,7 +17,7 @@ extern "C"
 int readline(char *dest, int maxlen) 
 {
     char *result = fgets(dest, maxlen, stdin);
-    if (results != NULL) {
+    if (result != NULL) {
         int len = strlen(result);
         if (len > 0) {
             dest[len - 1] = 0;
@@ -25,7 +25,7 @@ int readline(char *dest, int maxlen)
         return(len);
     }
 
-    return(-1) // an error occured
+    return(-1); // an error occured
 }
 
 int main(void)
@@ -34,10 +34,10 @@ int main(void)
     try {
         char *title = get_title();
         printf("calling %s\n", title);
-        asm_func();
+        asm_main();
         printf("%s terminated\n", title);
 
     } catch(...) {
-        printf("an error occured!")
+        printf("an error occured!");
     }
 }
