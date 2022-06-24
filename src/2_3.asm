@@ -32,5 +32,16 @@ get_title PROC
 get_title ENDP
 
 
+    public asm_main
+asm_main PROC
 
+    sub     rsp, 56
+
+    
+
+    add     rsp, 56
+
+asm_main ENDP
+
+    end
 
