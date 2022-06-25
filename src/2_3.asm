@@ -37,9 +37,51 @@ asm_main PROC
 
     sub     rsp, 56
 
+    lea     rcx, init_prompt
+    call    printf
+
+    lea     rcx, input      ; pass arguments into the realine function
+    mov     rdx, maxlen
+    call    readline
+
+    ; call atoi(i)
+
+    lea     rcx, input
+    call    atoi
+    and     rax, 0ffh       ; we use only LO 8 bits
+    mov     int_value, rax  ; move result into the int_value
+
+    lea     rcx, fmt_str1
+    mov     rdx, rax
+    call    printf
+
+    mov     rdx, int_value
+    not     dl              ; we are only interested in the lower byte
+    lea     rcx, fmt_str2
+    call    printf
+
+    mov     rdx, int_value
+    not     rdx
+    add     rdx, 1
+    and     rdx, 0ffh
+    lea     rcx, fmt_str3
+    call    printf
+
+    mov     rdx, int_value
+    not     rdx
+    add     rdx, 1
+    lea     rcx, fmt_str4
+    call    printf
+
+    mov     rdx, int_value
+    neg     rdx
+    lea     rcx, fmt_str5
+    call    printf
+
     
 
     add     rsp, 56
+    ret
 
 asm_main ENDP
 
