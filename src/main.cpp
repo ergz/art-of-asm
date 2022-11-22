@@ -2,12 +2,15 @@
 
 extern "C" 
 {
-    void asm_func(void);
-};
+    // Function written in ASM
+    void asm_func(void);    
+}
 
-int main(void) 
+int main() 
 {
-    printf("calling asm main\n");
+    printf("calling asm function\n");
     asm_func();
-    printf("return from asm main\n");
+    printf("returned from asm function\n");
+
+    return(0);
 }
