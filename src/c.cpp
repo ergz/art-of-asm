@@ -8,7 +8,6 @@ extern "C"
 {
     void asm_main(void);
 
-
     char *get_title(void);
 
     int readline(char* dest, int maxlen);
