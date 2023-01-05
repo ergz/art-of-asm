@@ -8,6 +8,7 @@ extern "C"
 {
     void asm_main(void);
 
+    // function is defined in the asm file
     char *get_title(void);
 
     int readline(char* dest, int maxlen);
